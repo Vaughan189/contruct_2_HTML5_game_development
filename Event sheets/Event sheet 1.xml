@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Event sheet 1</name>
+    <events>
+        <variable constant="0" name="Player_2Score" sid="259120390351283" static="0" type="number">0</variable>
+        <variable constant="0" name="Player_1Score" sid="267766902087420" static="0" type="number">1</variable>
+        <event-block sid="105998333670701">
+            <conditions>
+                <condition id="-18" name="On created" sid="583768422274327" type="Bullet_2" />
+            </conditions>
+            <actions>
+                <action id="-18" name="Rotate clockwise" sid="713127333702541" type="Bullet_2">
+                    <param id="0" name="Degrees">180</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="282295597370892">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="399215822844894" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">Player_1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="847866625330397" type="Player_1">
+                    <param id="0" name="Object">Bullet_1</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">1</param>
+                </action>
+                <action id="0" name="Set text" sid="389463897857782" type="Text3">
+                    <param id="0" name="Text">&quot;Score : &quot; &amp;Player_1Score</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="586331349828607">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="692224264052296" type="Bullet_1">
+                    <param id="0" name="Object">Player_2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="557006979685850" type="System">
+                    <param id="0" name="Variable">Player_1Score</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-12" name="Subtract from" sid="693266653131692" type="Player_2">
+                    <param id="0" name="Instance variable">Player_2_Health</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="932225451378643" type="Bullet_1">
+                    <param id="0" name="Object">explosion</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">1</param>
+                </action>
+                <action id="-9" name="Destroy" sid="398005433303915" type="Bullet_1" />
+            </actions>
+        </event-block>
+        <event-block sid="185724181421672">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="317774963692749" type="Player_2">
+                    <param id="0" name="Instance variable">Player_2_Health</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="609479641807547" type="Player_2">
+                    <param id="0" name="Object">explosion</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">1</param>
+                </action>
+                <action id="-9" name="Destroy" sid="903818563165612" type="Player_2" />
+            </actions>
+        </event-block>
+        <event-block sid="129933572852827">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="806565275239892" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">Player_2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="791637708980354" type="Player_2">
+                    <param id="0" name="Object">Bullet_2</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="141583824589825">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="221019661192682" type="Bullet_2">
+                    <param id="0" name="Object">Player_1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="537291578765204" type="System">
+                    <param id="0" name="Variable">Player_2Score</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-12" name="Subtract from" sid="218773702489021" type="Player_1">
+                    <param id="0" name="Instance variable">Player_1_Health</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="935023218079402" type="Bullet_2">
+                    <param id="0" name="Object">explosion</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">1</param>
+                </action>
+                <action id="-9" name="Destroy" sid="722662523769719" type="Bullet_2" />
+                <action id="0" name="Set text" sid="477500883947720" type="Text2">
+                    <param id="0" name="Text">&quot;Score : &quot; &amp;Player_2Score</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="342046758193096">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="562087014714551" type="Player_1">
+                    <param id="0" name="Instance variable">Player_1_Health</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="331493548686144" type="Player_1">
+                    <param id="0" name="Object">explosion</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">1</param>
+                </action>
+                <action id="-9" name="Destroy" sid="334316201250479" type="Player_1" />
+            </actions>
+        </event-block>
+        <event-block sid="295432785138661">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="569665095979916" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="822450767230873" type="Bullet_1" />
+                <action id="-9" name="Destroy" sid="712038862144980" type="Bullet_2" />
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
